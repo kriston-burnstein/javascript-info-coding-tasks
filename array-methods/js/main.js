@@ -1,4 +1,4 @@
-//
+// 7/8/22
 
 //JS.INFO - ARRAY METHODS
 
@@ -67,3 +67,40 @@ let filtered = filterRange(arr, 1, 4)
 console.log(filtered)  //3,1 matching values
 console.log(arr)  //5,3,8,1 not modified
 
+// 7/10/22
+
+//TASK 3
+// Filter range "in place"
+// importance: 4
+// Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
+
+// The function should only modify the array. It should not return anything.
+
+// For instance:
+
+// let arr = [5, 3, 8, 1];
+
+// filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+// alert( arr ); // [3, 1]
+
+
+// heads up that the problem is remove all values EXCEPT what is noted 
+// keep a > index < b
+// remove index < a, remove index > b
+
+let numsArray = [5, 3, 8, 1];
+
+function filterRangeInPlace(arr, a, b) {
+  for (let i = 0; i < arr.length; i++)  
+  if (arr[i] < a || arr[i] > b) {        //removing if outside of interval
+    arr.splice(i, 1)                     //remove, starting at index and remove 1 element
+    i--
+  }
+}
+
+filterRangeInPlace(numsArray, 1, 4) //remove from array numbers between 1 and 4
+console.log(numsArray) //logs [3,1]
+
+//TASK 5
+//Sort in decreasing order
